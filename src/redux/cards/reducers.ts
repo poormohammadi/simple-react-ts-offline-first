@@ -18,13 +18,13 @@ export function cardsReducer(state: CardsState = initialState, action: CardActio
         case CardActionsTypes.DeleteCard: {
             return {
                 ...state,
-                cards: state.cards?.filter(card => card.id !== action.payload)
+                cards: state.cards.filter(card => card.id !== action.payload)
             }
         }
         case CardActionsTypes.UpdateCard: {
             return {
                 ...state,
-                cards: state.cards?.map(card =>
+                cards: state.cards.map(card =>
                     card.id === action.payload.id ? { ...action.payload } : card
                 ),
             }
