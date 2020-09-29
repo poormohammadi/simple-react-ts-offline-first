@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-const customAxios = axios.create();
+const customAxios = axios.create({
+    baseURL: '/'
+});
 
 customAxios.interceptors.request.use(
     async config => {
-        config.baseURL = '/';
         return config;
     }, (err) => {
         return Promise.reject(err);
