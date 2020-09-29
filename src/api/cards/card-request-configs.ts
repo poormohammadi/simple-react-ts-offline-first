@@ -1,11 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 
 export const cardRequestConfigs = {
-    getAllCardConfig: (): AxiosRequestConfig => ({
-        method: 'GET',
-        url: `/card`,
-    }),
-
     addCardConfig: (id: string, description: string): AxiosRequestConfig => ({
         method: 'POST',
         url: `/card`,
