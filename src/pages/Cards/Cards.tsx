@@ -25,7 +25,7 @@ class Cards extends React.Component<Props>{
                 <Card
                     key={card.id}
                     id={card.id}
-                    text={card.description}
+                    description={card.description}
                     onEdit={description => {
                         updateCard({ ...card, description })
                     }}

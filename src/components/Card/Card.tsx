@@ -3,15 +3,15 @@ import React from 'react';
 import style from './Card.module.css';
 
 type Props = {
-  text: string;
+  description: string;
   id: string;
 
-  onEdit: (e: string) => void;
+  onEdit: (value: string) => void;
   onDelete: () => void;
 }
 
 type State = {
-  value: string;
+  inputValue: string;
 }
 
 export class Card extends React.Component<Props, State>{
@@ -20,26 +20,26 @@ export class Card extends React.Component<Props, State>{
     super(props);
 
     this.state = {
-      value: props.text,
+      inputValue: props.description,
     };
   }
 
   render() {
     const { onEdit, onDelete } = this.props;
-    const { value } = this.state;
+    const { inputValue } = this.state;
 
     return (
       <div className={style.card}>
 
         <input
           type="text"
-          value={value}
+          value={inputValue}
           className={style.input}
-          onChange={e => this.setState({ value: e.target.value })}
+          onChange={e => this.setState({ inputValue: e.target.value })}
         />
 
         <div className={style.rightSideContainer}>
-          <button className={style.update} onClick={() => onEdit(value)}>Update</button>
+          <button className={style.update} onClick={() => onEdit(inputValue)}>Update</button>
           <button className={style.delete} onClick={onDelete}>Delete</button>
         </div>
       </div>

@@ -29,7 +29,7 @@ const middleWares = applyMiddleware(logger);
 
 const store = createStore(
     rootReducer,
-    undefined,
+    {},
     compose(
         middleWares,
         offline(customConfig),
